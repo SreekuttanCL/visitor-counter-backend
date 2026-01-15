@@ -10,6 +10,8 @@ dynamodb = boto3.resource("dynamodb")
 table = dynamodb.Table(TABLE_NAME)
 
 def lambda_handler(event, context):
+    print("CI/CD test")
+
     try:
         # Increment visitor count safely
         response = table.update_item(
