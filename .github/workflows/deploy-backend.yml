@@ -25,7 +25,7 @@ jobs:
     - name: Zip Lambda
       run: |
         cd backend/lambda
-        zip -r ../deployment.zip app.py
+        zip -r deployment.zip app.py
 
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v3
