@@ -42,6 +42,7 @@ resource "aws_api_gateway_method_response" "cors_response" {
 }
 
 resource "aws_api_gateway_integration_response" "cors_integration" {
+  depends_on   = [aws_api_gateway_integration.lambda_integration]
   rest_api_id = aws_api_gateway_rest_api.visitor_api.id
   resource_id = data.aws_api_gateway_resource.root.id
   http_method = aws_api_gateway_method.get_visitor.http_method
